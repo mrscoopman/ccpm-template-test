@@ -8,59 +8,45 @@ Exported 2 September 2026 by n.hoffmann
 [08:41] Marcus Oyelaran
 4.2 is out. Went clean, no rollback, no overnight pages. Nice work everyone.
 
-[08:44] Iris Kowalczyk
-Verification passed on all four suites. Signing off on it.
-
 [09:02] Sofia Marino
 filter persistence is live! small thing, been asked for forever
-
-[09:15] Jonas Brandt
-Told Meridian the weight rebalance shipped. They're pleased. First good news I've
-given that account in a while.
 
 
 --- Thursday, 14 August 2026 ---
 
-[11:20] Tomás Ferreira
-quick q on the weight change — was that meant to apply to responders in the
-low-availability cohort too, or only to full-availability ones? the config doesn't
+[11:20] Marcus Oyelaran
+quick q on the change to who gets pinged — was that meant to apply to responders
+who've been turning jobs down too, or only everyone else? the config doesn't
 distinguish between them as far as i can tell
 
-[11:22] Tomás Ferreira
+[11:22] Marcus Oyelaran
 not saying it's wrong, just want to know if it was a decision or if it just fell out
 that way
 
 [11:48] Wen Li
 🙏 on PTO until the 24th, I'll look when I'm back
 
-[13:05] Aisha Nkemelu
-anyone else seeing the coverage report export still off by an hour? thought we fixed
-that in 4.2
-
-[13:31] Marcus Oyelaran
-that's the timezone one, should be fixed. can you file it with a screenshot
-
 
 --- Monday, 18 August 2026 ---
 
 [07:52] Nadia Hoffmann
 Heads up — callout-related tickets are running about 3x normal since Wednesday.
-Two themes. One is "I'm not getting offers anymore," mostly from responders at
-Northgate and a couple of the smaller co-ops. The other is "offers expire before I
-can respond."
+Two themes. One is responders saying their phone never even goes off anymore. The
+other is their phone buzzes, they grab it, and by the time they've got a thumb on
+the screen it's already gone to somebody else.
 
 [07:55] Nadia Hoffmann
 The second one I can explain, we shortened the timeout. The first one I can't.
 
-[08:30] Jonas Brandt
-Meridian's ops lead asked about acceptance numbers on the QBR this morning. I didn't
-have anything for her. Can someone pull the acceptance trend since the release?
+[08:30] Nadia Hoffmann
+Can someone pull the trend on how often responders are actually answering lately?
+Trying to get a read on whether this is really as bad as the tickets make it look.
 
 [09:14] Marcus Oyelaran
 I can get you something rough but it won't be the real weekly numbers
 
-[10:02] Jonas Brandt
-rough is fine, she just wants to know the direction
+[10:02] Nadia Hoffmann
+rough is fine, just want to know the direction
 
 
 --- Tuesday, 19 August 2026 ---
@@ -91,11 +77,12 @@ Thanks Priya. Go rest.
 --- Tuesday, 26 August 2026 ---
 
 [09:33] Nadia Hoffmann
-Ticket volume still elevated. Not getting worse, not getting better. Split is roughly
-two thirds "not getting offers" / one third "offers expiring."
+Ticket volume still elevated. Not getting worse, not getting better. Split is
+roughly two thirds "phone never goes off" to one third "gone before I could
+answer."
 
 [09:40] Nadia Hoffmann
-Northgate's handler lead emailed me directly, which she has never done before.
+One of the handlers emailed me directly today, which never happens.
 
 
 --- Thursday, 28 August 2026 ---
