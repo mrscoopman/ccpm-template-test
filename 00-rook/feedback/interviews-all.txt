@@ -1,0 +1,211 @@
+========================================================================
+INTERVIEW: ambrose.txt
+========================================================================
+
+Recorded call — console redesign research
+Interviewer: Sofia Marino, Product Design
+Participant: Ambrose (handler for Captain Vantage)
+2 September 2026, 34 minutes (transcript excerpt)
+
+SOFIA: Thanks for making time. I know evenings are awkward for you.
+
+AMBROSE: Not at all. The household is quiet until eight or so. Where would you like to begin.
+
+SOFIA: Start wherever's easiest. Walk me through what the console looks like on a normal night.
+
+AMBROSE: Very well. I keep it open on the second monitor in the study, always on the coverage view rather than the incident feed — I find the incident feed tells you what's happening elsewhere, and I only care what's happening to us. I have a filter set for the young master's capability tags, structural-entry and flight, so I'm not wading through listings that have nothing to do with him.
+
+SOFIA: And that filter — do you have to rebuild it each time you open the console?
+
+AMBROSE: Until this month, yes, every single time, which I raised more than once. I was told it was coming. It arrived with the August release and I noticed within the hour. Small thing to say out loud, but it was the difference between opening the console and immediately being at work, versus opening it and doing five minutes of housekeeping before I could actually look at anything. I'd put that in the report if reports still went anywhere.
+
+SOFIA: They do, for what it's worth — that's part of why I'm calling. What else changed for you with the persistence fix, anything you didn't expect?
+
+AMBROSE: Only that I trust it less than I'd like. Twice now it's reverted to the default view after what I assume was some manner of update on your end, and I didn't notice until I'd been looking at the wrong filter for a quarter of an hour. I'd rather it warned me the filter had reset than simply reset it.
+
+SOFIA: That's useful, thank you. Can I ask about the layout itself — is there anything you're hunting for that you feel should be closer to hand?
+
+AMBROSE: The capability tag legend. It sits in a drawer off the responder detail panel and I open it perhaps once a fortnight, when a new tag appears and I don't recognize it. Cold-weather I understood. Aquatic I understood. There was one in the spring I had to look up twice before it stuck. I don't say this is urgent. I say it because you asked what I hunt for, and that's genuinely it.
+
+SOFIA: Fair. How are you finding the coverage view generally — enough at a glance, or are you clicking through to individual incidents more than you'd like?
+
+AMBROSE: More than I'd like, but I don't know that there's a fix for it that doesn't clutter the view for everyone else. I click through mostly to confirm status on something I already suspect is a problem. Which — I should mention this while we're on the topic of problems, since I doubt it'll come up again and it's been sitting with me.
+
+SOFIA: Please, go ahead.
+
+AMBROSE: Two weeks ago the young master was halfway into the suit — coat on, one boot on — when it went to somebody else. I heard about it after the fact, from him, not from the console, because by the time I'd have noticed anything the listing had already moved on. It wasn't the first time this year, but it was the closest-run I've seen. I don't say that to complain about the software generally. I say it because if the console is being redesigned, I would want whatever tells me a callout is live to be harder to miss, not easier.
+
+SOFIA: That's genuinely helpful, and I'm sorry that happened. Can you tell me more about the timing of it — how far into getting ready he was when it moved on?
+
+AMBROSE: I couldn't give you seconds. He tells me it felt fast. I'll say only that in the years I've done this, there was a period where a slower-arriving response of his still landed him the job more often than not, and lately that doesn't seem to hold the way it used to. I notice it, I don't dwell on it. It isn't really my place to guess at why. I only see the boot half on.
+
+SOFIA: Understood, and thank you for flagging it regardless — that's exactly the kind of thing I want to hear even when it's not strictly about the console. Last thing, and then I'll let you go — if you could change one thing about the console tonight, what would it be?
+
+AMBROSE: Larger text on the status badge. My eyes aren't what they were, and at a glance I sometimes cannot tell engaged from available without leaning in. It's a small vanity of a request next to the other thing, but you did ask.
+
+SOFIA: I did, and it's a fair one — I'll note it. Thank you, Ambrose, this has been really helpful.
+
+AMBROSE: You're entirely welcome. Do let me know if the filter persistence proves reliable. I'd rather trust it than keep double-checking it.
+
+[END OF EXCERPT]
+
+
+========================================================================
+INTERVIEW: aunt-dot.txt
+========================================================================
+
+Recorded call — console redesign research
+Interviewer: Sofia Marino, Product Design
+Participant: Dorothy Pell ("Aunt Dot"), handler for Vesper
+3 September 2026, 41 minutes (transcript excerpt)
+
+SOFIA: Hi Dot, thanks so much for squeezing this in — I know nights are your busy time.
+
+DOT: Oh, don't be silly, I've got twenty minutes before I need to think about starting anything for him to eat when he gets in, so this is perfect timing actually. Ask away.
+
+SOFIA: Let's start with your setup. Where do you actually work from?
+
+DOT: The kitchen counter, believe it or not. I know that's not what you expected to hear. I tried the desk in the spare room for about a month and I hated it, too far from everything, so now the laptop just lives on the counter next to the toaster and I do the console from there, standing up half the time. He thinks it's funny. I think it's practical — I'm making his dinner anyway most nights he's home, so I might as well be watching the board while I do it.
+
+SOFIA: I actually love that, that's such a real way to use it. Does the layout work for you standing up, glancing at it between other things?
+
+DOT: Mostly, yes. The one thing I'll say — and tell me if this is silly — the text is small enough that from a normal standing distance I sometimes can't tell if something's changed unless I lean right in, and leaning right in with wet hands over a laptop is not something I recommend to anyone. I've thought about getting reading glasses just for this. I haven't yet. I probably should.
+
+SOFIA: Not silly at all, that's really useful, someone else mentioned something similar. What about the notifications — do you get a sound, a banner, anything when something comes in for him?
+
+DOT: A little chime, and it's a good chime, I don't mind it. But here's the thing I actually wanted to tell you about, if you don't mind me going a bit sideways.
+
+SOFIA: Please, go sideways, that's exactly what I'm here for.
+
+DOT: Well — it's his phone that matters more than my laptop, in the end, because he's the one who has to actually say yes to something, and half the time when it comes in he's not even downstairs. He'll be up doing whatever he does up there, and I'll hear it buzz on the counter before he does, and I'll shout up, and he comes down the stairs two at a time, and by the time he's actually got a thumb on the screen — it's gone. Gone to somebody else already. And he just sort of stands there in the kitchen holding the phone.
+
+SOFIA: That sounds really frustrating to watch, let alone for him to go through. How often would you say that's happening?
+
+DOT: More than it used to, I'll say that. It didn't used to feel like a fair race, phone to stairs, and now it does, and he loses it more than he wins it. I've started telling him to just leave the phone in his pocket all evening instead of upstairs, which he thinks is me being overbearing, but I notice things, that's all.
+
+SOFIA: That's a really vivid way to put it, thank you — the fairness of the race, I mean. Can I ask — has there been anything on the other side, weeks where it feels too quiet rather than too fast?
+
+DOT: [pause] Now that you mention it — yes, actually, there have been stretches, more than one, where the phone just sits there and sits there and I end up cooking for someone who's home all week instead of half of it, which honestly I don't mind, I like having him at the table. I hadn't really put those two things next to each other before, the quiet weeks and the fast-vanishing ones. I just cook for whatever week I'm in.
+
+SOFIA: That's a helpful thing to hear, even loosely. Do the quiet weeks worry you?
+
+DOT: A little, yes, if I'm honest, more for him than for the software. He gets restless if he's home too long, doesn't say so but I can tell, he starts reorganizing the garage, and that's always the sign. But I couldn't tell you why it happens, quiet week or a fast week, I just notice the pattern in how much I'm cooking. I'm not trying to tell you your business.
+
+SOFIA: You're not at all, this is genuinely exactly what I want to hear, patterns and all. Last question — if there were one thing about the console you'd want changed, what would it be?
+
+DOT: Bigger text, like I said, and — this is silly — maybe something that tells me too, not just him, when something's come in, so I'm not relying on hearing a buzz through a ceiling. I don't need to do anything about it. I'd just like to know.
+
+SOFIA: That's not silly at all, that's really useful. Thank you so much for this, Dot, truly.
+
+DOT: Anytime, love. Go easy on him if you ever meet him, he's a good boy, he just doesn't eat enough.
+
+[END OF EXCERPT]
+
+
+========================================================================
+INTERVIEW: halloran.txt
+========================================================================
+
+Recorded call — console redesign research
+Interviewer: Sofia Marino, Product Design
+Participant: Halloran, handler for Sgt. Bulwark, also runs the gear cage
+5 September 2026, 38 minutes (transcript excerpt)
+
+SOFIA: Thanks for making time, Halloran. I know you're mostly on the Supply side of the house, but I'm actually here about the console — the coverage and callout side. I wanted to get your take since you use both.
+
+HALLORAN: Sure, sure. Before we get into that though, while I've got someone from product on the line — the requisition approval flow is a mess and I want that on the record.
+
+SOFIA: I hear you, and I do want to get to that if we have time, but can we start with the console? Just five minutes on that side, then I promise we'll talk Supply.
+
+HALLORAN: Fine. Five minutes. Console's fine. I don't live in it, Bulwark's a pretty steady responder, doesn't need a lot of babysitting. What do you want to know.
+
+SOFIA: Anything that slows you down when you do open it — filters, layout, anything.
+
+HALLORAN: Nothing major. I check it maybe twice a shift. It does what it needs to do. Can we talk about requisitions now.
+
+SOFIA: One more — do you use the coverage view or go straight to Bulwark's profile?
+
+HALLORAN: Straight to the profile, always, I don't care what anyone else is doing. Okay. Requisitions.
+
+SOFIA: Go ahead.
+
+HALLORAN: The approval chain on a requisition takes too long and nobody can tell me why. I put in for a replacement vest plate three weeks ago — cracked one, not cosmetic, a real crack — and it sat waiting on a quartermaster signature for eleven days. Eleven days is a long time to have a responder in the field with degraded plate and nobody above me seems to think that's urgent.
+
+SOFIA: That does sound urgent. Is there a way to flag something as time-sensitive in the current flow?
+
+HALLORAN: There's a priority field. I set it. Doesn't seem to change anything about how fast it actually moves, it just sits in the same queue as somebody ordering a spare set of boot laces. That's the whole complaint. One queue, everything in it, doesn't matter if it's laces or plate.
+
+SOFIA: That's useful, thank you. What about the maintenance scheduling side — does that feel accurate to you, timed well against when Bulwark's actually available?
+
+HALLORAN: Mostly. It's gotten smarter about not booking maintenance into a week he's likely to be out, I'll give it that. It used to schedule a boot resole for the middle of a callout-heavy stretch and that was its own headache. Hasn't done that in a while. Small thing but I noticed.
+
+SOFIA: Good to know that's landed. Any issues with field failure reports — filing them, or hearing back on them?
+
+HALLORAN: Filing's fine, it's quick, three fields and a photo. Hearing back is the problem — I file a failure report and it goes into a void. I don't know if anyone reads it, I don't know if it changed anything, I just know the item's history shows the report and that's it. I'd like to know it did something.
+
+SOFIA: That's a fair ask, I'll make sure that gets to the right team even though it's not mine directly. Anything else on the Supply side before I let you go?
+
+HALLORAN: The equipment catalog search is bad. If I don't know the exact item name I'm not finding it. I typed "plate" the other week looking for the vest plate and got forty results, half of them unrelated, and had to scroll. Category filters would help. That's it, that's my list, I've been sitting on it a while.
+
+SOFIA: This has all been really useful, genuinely, thank you for laying it out like that. Before we close — anything at all on the console side I didn't ask about? Even something small.
+
+HALLORAN: [pause] One thing, and it's not really a complaint so much as I noticed it. Bulwark mentioned a callout went to someone else before he'd even got his boots on, a few weeks back. Didn't think much of it at the time, these things happen. You asked, so there it is.
+
+SOFIA: I appreciate you mentioning it. Do you know roughly when that was?
+
+HALLORAN: Sometime in August, I couldn't tell you the date. Like I said, didn't think much of it. Are we done, I've got a delivery to sign for.
+
+SOFIA: We're done, thank you so much for your time, Halloran, this was genuinely useful on both fronts.
+
+HALLORAN: Get someone to fix the requisition queue.
+
+[END OF EXCERPT]
+
+
+========================================================================
+INTERVIEW: kip.txt
+========================================================================
+
+Recorded call — console redesign research
+Interviewer: Sofia Marino, Product Design
+Participant: Kip, handler for Meteor Mite and The Gale
+4 September 2026, 29 minutes (transcript excerpt)
+
+SOFIA: Hey Kip, thanks for hopping on. Can you set the scene for me — what's your actual desk look like?
+
+KIP: Three monitors, headset on basically the whole shift even when nobody's talking to me, and the console's always up on the center screen. Left screen is usually just a stream running, right screen is whatever else I'm doing between callouts. So the console's competing for my attention with two other bright rectangles, is basically the situation.
+
+SOFIA: That's a great way to put it. Does it hold up against that competition?
+
+KIP: Mostly, yeah, it's fine, it's clear. But I will say this every time anyone from Rook talks to me and I'm going to say it again now — dark mode. I am begging. It's 11pm, I've got two other screens dimmed down, and the console is just this wall of white light in the middle of my face. I've tried the OS-level color filter trick, it makes the whole thing look sick, like everything's got a fever. I just want an actual dark theme built in.
+
+SOFIA: Noted, again, I promise it's actually logged. Beyond the brightness, does the layout itself work for you at that hour?
+
+KIP: The layout's fine. Two responders means I've basically always got two coverage cards up side by side and that part's good, I like that I don't have to tab between them. What's not fine is that the two cards can tell wildly different stories and there's nothing on the screen that helps me make sense of why.
+
+SOFIA: Say more about that — different stories how?
+
+KIP: So — Meteor Mite's been texting me all week asking if something's broken because it's so quiet. Nothing coming in, phone just sitting there. And The Gale hasn't stopped, like, at all, same week, same city. I don't know what to tell either of them. Mite thinks Mite's been forgotten. Gale's exhausted. I'm looking at two cards on the same screen that might as well be two different products.
+
+SOFIA: That's really striking, thank you for putting numbers — well, not numbers, but putting it that concretely. Is that a new pattern, or has it always been kind of lumpy like that?
+
+KIP: It's always been a little lumpy, that's just how the work is, some responders get busier weeks than others. But this felt different, like all the way to one side or all the way to the other, no middle. I mentioned it to Mite, actually, just — hang in there, it'll pick up — because what else do you say. I don't have anything better than that.
+
+SOFIA: That's fair. When you're managing two cards like that, is there anything the console could surface that would help you make sense of the gap, even if it's just at a glance?
+
+KIP: Honestly? I don't even know what I'd want it to tell me. I just want it to look less like a coincidence when I'm staring at it at midnight and one card's dead quiet and the other's on fire. Maybe that's not a console thing, maybe that's just — I don't know, whatever's underneath it. I'm not the person to ask about that part. I just watch the cards.
+
+SOFIA: That's really helpful context regardless. Switching gears a little — how do you use the filter and search on your end, with only two responders to track?
+
+KIP: Barely use it, honestly, two is small enough I just eyeball both cards. I know other handlers with bigger rosters live in the filters. For me it's more like — I want the alert sound to be different for each of them, because right now Mite and Gale both just go "bing" and I have to actually look to know which one. That trips me up more than I'd like to admit at 2am.
+
+SOFIA: That's a great one, I hadn't heard that specific ask yet. Last thing — if you got exactly one thing from this redesign, what is it?
+
+KIP: Dark mode. I will say it as many times as you let me. Everything else is nice to have. Dark mode is the thing that actually changes my night.
+
+SOFIA: Duly noted, for the record, loudly. Thanks, Kip, this was great.
+
+KIP: Anytime. Tell whoever's building it dark mode has a fan club and I'm the president.
+
+[END OF EXCERPT]
+
