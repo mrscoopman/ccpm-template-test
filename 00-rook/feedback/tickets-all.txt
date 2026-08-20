@@ -210,7 +210,7 @@ TICKET: t-018.txt
 ========================================================================
 
 Ticket #: T-018
-Filed by: Linda Achterberg (handler)
+Filed by: Linda Pruitt (handler)
 Responder: Farlight
 Date: 30 August 2026
 Severity: Medium (assigned by filer)
@@ -260,7 +260,7 @@ TICKET: t-022.txt
 ========================================================================
 
 Ticket #: T-022
-Filed by: Beatrice Nkemelu (handler)
+Filed by: Beatrice Calloway (handler)
 Responder: The Drift
 Date: 3 September 2026
 Severity: Medium (assigned by filer)
