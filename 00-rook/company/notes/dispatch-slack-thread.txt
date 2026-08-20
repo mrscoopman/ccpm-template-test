@@ -1,0 +1,112 @@
+Slack export — #dispatch-team
+Rook Industries workspace
+Exported 2 September 2026 by n.hoffmann
+
+
+--- Wednesday, 13 August 2026 ---
+
+[08:41] Marcus Oyelaran
+4.2 is out. Went clean, no rollback, no overnight pages. Nice work everyone.
+
+[08:44] Iris Kowalczyk
+Verification passed on all four suites. Signing off on it.
+
+[09:02] Sofia Marino
+filter persistence is live! small thing, been asked for forever
+
+[09:15] Jonas Brandt
+Told Meridian the weight rebalance shipped. They're pleased. First good news I've
+given that account in a while.
+
+
+--- Thursday, 14 August 2026 ---
+
+[11:20] Tomás Ferreira
+quick q on the weight change — was that meant to apply to responders in the
+low-availability cohort too, or only to full-availability ones? the config doesn't
+distinguish between them as far as i can tell
+
+[11:22] Tomás Ferreira
+not saying it's wrong, just want to know if it was a decision or if it just fell out
+that way
+
+[11:48] Wen Li
+🙏 on PTO until the 24th, I'll look when I'm back
+
+[13:05] Aisha Nkemelu
+anyone else seeing the coverage report export still off by an hour? thought we fixed
+that in 4.2
+
+[13:31] Marcus Oyelaran
+that's the timezone one, should be fixed. can you file it with a screenshot
+
+
+--- Monday, 18 August 2026 ---
+
+[07:52] Nadia Hoffmann
+Heads up — callout-related tickets are running about 3x normal since Wednesday.
+Two themes. One is "I'm not getting offers anymore," mostly from responders at
+Northgate and a couple of the smaller co-ops. The other is "offers expire before I
+can respond."
+
+[07:55] Nadia Hoffmann
+The second one I can explain, we shortened the timeout. The first one I can't.
+
+[08:30] Jonas Brandt
+Meridian's ops lead asked about acceptance numbers on the QBR this morning. I didn't
+have anything for her. Can someone pull the acceptance trend since the release?
+
+[09:14] Marcus Oyelaran
+I can get you something rough but it won't be the real weekly numbers
+
+[10:02] Jonas Brandt
+rough is fine, she just wants to know the direction
+
+
+--- Tuesday, 19 August 2026 ---
+
+[16:20] Priya Raghunathan
+Catching up on this thread. Some of this is going to be seasonal — August is always
+soft and we see this every year. Let's not spiral before we have numbers in front of
+us. I'd rather we look at this properly in September than react to two weeks of
+tickets.
+
+[16:24] Nadia Hoffmann
+Fair. I'll keep tracking the split between the two themes so we have it.
+
+
+--- Thursday, 21 August 2026 ---
+
+[17:40] Priya Raghunathan
+Last day. Handover doc is in the Dispatch folder. It's been a good fourteen months —
+thank you all, genuinely. Marcus has my number if anything catches fire.
+
+[17:44] Sofia Marino
+👋💛
+
+[17:51] Marcus Oyelaran
+Thanks Priya. Go rest.
+
+
+--- Tuesday, 26 August 2026 ---
+
+[09:33] Nadia Hoffmann
+Ticket volume still elevated. Not getting worse, not getting better. Split is roughly
+two thirds "not getting offers" / one third "offers expiring."
+
+[09:40] Nadia Hoffmann
+Northgate's handler lead emailed me directly, which she has never done before.
+
+
+--- Thursday, 28 August 2026 ---
+
+[15:12] Marcus Oyelaran
+New PM starts Monday. Let's give them a week to get up to speed and then regroup
+properly on the 4.2 picture — I don't want to hand them a conclusion before they've
+had a chance to look at it themselves.
+
+[15:19] Nadia Hoffmann
+Works for me. I'll have the ticket breakdown ready.
+
+[15:44] Wen Li
+Back from PTO and catching up on 700 messages. Ping me directly if something needs me.
