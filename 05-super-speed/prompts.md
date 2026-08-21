@@ -1,6 +1,7 @@
 # 05 · Super Speed — prompts
 
-**Where we are:** _(to be written when this module is built)_
+**Where we are:** You know what went wrong and you know what nobody
+built. Today you build the answer.
 
 Paste the prompts you asked this session below. Not the starter
 prompt — the ones you wrote yourself. By Module 6 this file is a
