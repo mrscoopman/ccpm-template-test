@@ -1,6 +1,7 @@
 # 03 · Rewind — prompts
 
-**Where we are:** _(to be written when this module is built)_
+**Where we are:** Two piles of feedback disagreed with each other and
+nobody could say why. Today you have the numbers.
 
 Paste the prompts you asked this session below. Not the starter
 prompt — the ones you wrote yourself. By Module 6 this file is a
