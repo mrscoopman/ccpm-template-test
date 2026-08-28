@@ -1,6 +1,11 @@
 # 02 · Super Hearing — prompts
 
-**Where we are:** _(to be written when this module is built)_
+**Context:** You joined Rook two weeks ago as PM on Dispatch.
+Release 4.2 shipped on 12 August, just before you arrived, and
+landed badly. Last session you built a context file and met the
+company.
+
+You still do not know what actually went wrong.
 
 Paste the prompts you asked this session below. Not the starter
 prompt — the ones you wrote yourself. By Module 6 this file is a

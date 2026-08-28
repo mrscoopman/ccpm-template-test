@@ -1,8 +1,10 @@
 # 06 · Sidekicks — prompts
 
-**Where we are:** You've spent five sessions doing this by hand — asking,
-reading, building — every time, in the room. Today you write down how
-you do one of those things once, and let it run without you.
+**Context:** You joined Rook two weeks ago as PM on Dispatch.
+Release 4.2 shipped on 12 August, just before you arrived, and
+landed badly. You've spent five sessions on it: finding out what
+went wrong, then building the fix nobody had — a working prototype,
+by hand, in one sitting, for one room.
 
 Paste the prompts you asked this session below. Not the starter
 prompt — the ones you wrote yourself. By Module 6 this file is a
