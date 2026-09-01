@@ -7,9 +7,10 @@ company.
 
 You still do not know what actually went wrong.
 
-Paste the prompts you asked this session below. Not the starter
-prompt — the ones you wrote yourself. By Module 6 this file is a
-prompt library built from your own questions.
+At the end of the session, ask Claude Code to save the prompts you
+wrote yourself below — not the starter prompt. The closing slide has
+the exact prompt to paste. By Module 6 this file is a prompt library
+built from your own questions.
 
 ---
 

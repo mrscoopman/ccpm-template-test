@@ -19,5 +19,7 @@ this workspace is a fictional teaching scenario — it's not a real company.
   in order.
 
 Each module folder has a `prompts.md` file. That's where your work goes —
-paste in the prompts you write for that module as you go, so by the end
-you have a library of your own prompts to look back on.
+at the end of each session, ask Claude Code to save the prompts you wrote
+yourself into it, so by the end you have a library of your own prompts to
+look back on. The closing slide of every module has the exact prompt to
+paste.
