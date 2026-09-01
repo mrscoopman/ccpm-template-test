@@ -15,3 +15,9 @@ teaching scenario.
 
 <!-- Keep the block above at the top of this file. Everything you add
      during the course goes below this line. -->
+
+---
+
+## Working context
+
+_You'll fill this in during Module 1._
