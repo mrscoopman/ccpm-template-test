@@ -3,7 +3,7 @@ Rook Industries workspace
 Exported 2 September 2026 by n.hoffmann
 
 
---- Wednesday, 13 August 2026 ---
+--- Thursday, 13 August 2026 ---
 
 [08:41] Marcus Oyelaran
 4.2 is out. Went clean, no rollback, no overnight pages. Nice work everyone.
@@ -12,7 +12,7 @@ Exported 2 September 2026 by n.hoffmann
 filter persistence is live! small thing, been asked for forever
 
 
---- Thursday, 14 August 2026 ---
+--- Friday, 14 August 2026 ---
 
 [11:20] Marcus Oyelaran
 quick q on the change to who gets pinged — was that meant to apply to responders
@@ -27,7 +27,7 @@ that way
 🙏 on PTO until the 24th, I'll look when I'm back
 
 
---- Monday, 18 August 2026 ---
+--- Tuesday, 18 August 2026 ---
 
 [07:52] Nadia Hoffmann
 Heads up — callout-related tickets are running about 3x normal since Wednesday.
@@ -49,7 +49,7 @@ I can get you something rough but it won't be the real weekly numbers
 rough is fine, just want to know the direction
 
 
---- Tuesday, 19 August 2026 ---
+--- Wednesday, 19 August 2026 ---
 
 [16:20] Priya Raghunathan
 Catching up on this thread. Some of this is going to be seasonal — August is always
@@ -61,7 +61,7 @@ tickets.
 Fair. I'll keep tracking the split between the two themes so we have it.
 
 
---- Thursday, 21 August 2026 ---
+--- Friday, 21 August 2026 ---
 
 [17:40] Priya Raghunathan
 Last day. Handover doc is in the Dispatch folder. It's been a good fourteen months —
@@ -74,7 +74,7 @@ thank you all, genuinely. Marcus has my number if anything catches fire.
 Thanks Priya. Go rest.
 
 
---- Tuesday, 26 August 2026 ---
+--- Wednesday, 26 August 2026 ---
 
 [09:33] Nadia Hoffmann
 Ticket volume still elevated. Not getting worse, not getting better. Split is
@@ -85,7 +85,7 @@ answer."
 One of the handlers emailed me directly today, which never happens.
 
 
---- Thursday, 28 August 2026 ---
+--- Friday, 28 August 2026 ---
 
 [15:12] Marcus Oyelaran
 New PM starts Monday. Let's give them a week to get up to speed and then regroup
