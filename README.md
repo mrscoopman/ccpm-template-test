@@ -6,11 +6,9 @@ this workspace is a fictional teaching scenario — it's not a real company.
 
 ## Getting started
 
-1. Click **Use this template** at the top of this page, then **Create a
-   new repository**.
-2. On your new copy, click **Code → Download ZIP**.
-3. Unzip the folder wherever you keep your files.
-4. Open that folder in the Claude desktop app.
+1. Download the ZIP from Slack.
+2. Unzip the folder wherever you keep your files.
+3. Open that folder in the Claude desktop app.
 
 ## What's in here
 
