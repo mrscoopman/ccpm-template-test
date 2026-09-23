@@ -11,9 +11,9 @@ from config import OFFER_TIMEOUT_SECONDS
 import history
 import routing
 
-ACCEPTED = "accepted"
-DECLINED = "declined"
-NO_ANSWER = "no_answer"
+TAKEN = "taken"
+TURNED_DOWN = "turned down"
+MISSED = "missed"
 
 
 def dispatch(callout):
@@ -24,7 +24,7 @@ def dispatch(callout):
     """
     for responder in routing.rank_for_callout(callout):
         answer = offer_to(responder, callout)
-        if answer == ACCEPTED:
+        if answer == TAKEN:
             history.record_accepted(responder)
             return responder
         history.record_declined(responder)
@@ -34,7 +34,7 @@ def dispatch(callout):
 def offer_to(responder, callout):
     """Push the callout to a responder's phone and wait for a tap.
 
-    Returns ACCEPTED, DECLINED or NO_ANSWER. Everything downstream
+    Returns TAKEN, TURNED_DOWN or MISSED. Everything downstream
     treats the last two the same way: we asked, and we didn't get a
     yes.
     """
@@ -45,7 +45,7 @@ def offer_to(responder, callout):
         if answer is not None:
             return answer
     withdraw_from_device(responder, callout)
-    return NO_ANSWER
+    return MISSED
 
 
 def push_to_device(responder, callout):

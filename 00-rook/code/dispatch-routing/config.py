@@ -1,7 +1,7 @@
 """Tuning values for callout routing.
 
 Everything in here changes who gets asked to take a job, so don't
-change anything in here without telling Marcus.
+change anything in here without telling the engineering manager.
 """
 
 # How long a callout offer stays on a responder's phone before we give

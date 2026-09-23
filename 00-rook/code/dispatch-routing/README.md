@@ -12,4 +12,5 @@ puts the offer on their phone, and waits for an answer.
 Nothing in here decides *whether* somebody gets asked. It decides the
 order. Everyone available is on the list.
 
-Owner: Wen Li. Ask Marcus if she's out.
+Owner: the staff engineer who built it. Ask the engineering manager if
+she's out.

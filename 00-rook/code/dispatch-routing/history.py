@@ -19,7 +19,7 @@ _scores = {}
 
 def recent_acceptance(responder):
     """This responder's score right now. Read by routing.score()."""
-    return _scores.get(responder.id, NEUTRAL_SCORE)
+    return _scores.get(responder.name, NEUTRAL_SCORE)
 
 
 def record_accepted(responder):
@@ -27,7 +27,7 @@ def record_accepted(responder):
     _set(responder, recent_acceptance(responder) + ACCEPTANCE_CREDIT)
 
 
-# TODO(wen, 2019): should this ease back toward NEUTRAL_SCORE on its
+# TODO(2019): should this ease back toward NEUTRAL_SCORE on its
 # own after a while? For: somebody who had a bad month shouldn't still
 # be carrying it in the spring. Against: if somebody has stopped taking
 # work, we probably want that to stick until they take work again.
@@ -40,4 +40,4 @@ def record_declined(responder):
 
 
 def _set(responder, value):
-    _scores[responder.id] = max(SCORE_FLOOR, min(SCORE_CEILING, value))
+    _scores[responder.name] = max(SCORE_FLOOR, min(SCORE_CEILING, value))
