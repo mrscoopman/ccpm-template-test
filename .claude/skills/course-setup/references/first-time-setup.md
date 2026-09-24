@@ -12,12 +12,14 @@ session. It:
 2. Installs GitHub's command-line tool, gh, into `~/.ccpm/gh`. No
    administrator password.
 3. Signs the student in to GitHub in their web browser, with a one-time code.
-   gh remembers the sign-in, and git uses it from then on.
+   gh remembers the sign-in. If the computer was already signed in, it asks
+   the student to confirm that's their own account, not an employer's.
 4. Creates their own public repo, `<username>/claude-code-for-pms-final`, from
    the course template, and copies it to `claude-code-for-pms-final` in their
    home folder.
-5. Sets their name and a private GitHub email for that folder only, so their
-   personal email stays off their work.
+5. Connects that folder only to their GitHub sign-in: their name, a private
+   GitHub email (so their personal email stays off their work), and git's
+   sign-in setting. Nothing else on their computer changes.
 6. Tells them to open a new session on that folder and type "check my setup".
 
 Running the setup prompt again is always safe: it skips what's done and

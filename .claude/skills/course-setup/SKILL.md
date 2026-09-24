@@ -37,8 +37,10 @@ repairs common problems.
     it.
   - For a repair, first tell the student in one plain sentence what you're
     about to do, and act only after they say yes. Repairs may: run that GitHub
-    program (including `auth setup-git` and changing this repo's visibility
-    back to Public); copy the student's own course files into the course
+    program (including changing this repo's visibility back to Public, but
+    never `auth setup-git`: connect git to its sign-in in the course folder's
+    own git settings only, never git's settings for the rest of the
+    computer); copy the student's own course files into the course
     folder from another folder on their computer (copy only; never move, edit
     or delete the originals); and rename something outside the course folder
     that blocks setup, by adding `-old` to its name (never delete it).

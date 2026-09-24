@@ -24,8 +24,15 @@ says "could not read Username" or "Authentication failed".
 
 1. Say: "Your computer is signed in to GitHub, but saving isn't using that
    sign-in yet. Can I connect the two?"
-2. On yes, run `<GH> auth setup-git` (GH is the `GH=` path from the
-   checkup; it needs no password).
+2. On yes, set the course folder's own git setting so it saves using that
+   sign-in. Change the course folder only, never git's settings for the rest
+   of their computer (so no `auth setup-git` and no `git config --global`).
+   From the course folder, with GH the `GH=` path from the checkup (it needs
+   no password):
+   `git config --local --replace-all credential.https://github.com.helper ""`
+   `git config --local --add credential.https://github.com.helper '!"<GH>" auth git-credential'`
+   The empty entry clears any other sign-in method for this folder only.
+   Check it with `GIT_TERMINAL_PROMPT=0 git ls-remote origin`.
 3. Run `bash <skill folder>/scripts/save.sh "<message>"` again and tell them
    whether their work is saved now.
 
