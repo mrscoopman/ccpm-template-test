@@ -27,7 +27,7 @@ says "could not read Username" or "Authentication failed".
    sign-in yet. Can I connect the two?"
 2. On yes, run `bash <skill folder>/scripts/checkup.sh connect-git` from the
    course folder. It sets the course folder's own git setting, the same one
-   the setup prompt's Step 5 sets (an empty
+   Step 5 of `setup/SETUP.md` sets (an empty
    `credential.https://github.com.helper` entry, then one that runs the
    GitHub tool with `auth git-credential`), and checks it with
    `GIT_TERMINAL_PROMPT=0 git ls-remote origin`. It needs no password and
@@ -39,8 +39,8 @@ says "could not read Username" or "Authentication failed".
    whether their work is saved now.
 
 **Missing or signed out.** Tell the student, "Your GitHub sign-in needs a refresh. Open a new
-session in the Claude app, paste the course setup prompt again, and follow
-it. It only redoes what's missing. Then come back to this folder and type:
+session in the Claude app, paste the course setup prompt again (the one-line
+prompt from your pre-class materials), and follow it. It only redoes what's missing. Then come back to this folder and type:
 check my setup." Don't sign them in yourself, and never ask for a password or
 token.
 
@@ -103,7 +103,8 @@ Fix: "This session is open on the wrong folder. In the Claude app, go to the
 Code tab, click + New session, choose <home folder>/claude-code-for-pms-final
 as the Project folder, and type: check my setup." Write the path the way their
 computer shows paths. If `claude-code-for-pms-final` doesn't exist in their
-home folder, they need the setup prompt (first-time-setup.md).
+home folder, they need to paste the course setup prompt (the one-line prompt
+from their pre-class materials; see first-time-setup.md).
 
 If they have work in the wrong folder (for example, from an old unzipped
 copy) and the course folder exists, copy it in for them:
@@ -129,7 +130,8 @@ GitHub from here.
 
 Fix: "This folder is linked to the course template instead of your own
 GitHub repo. Open a new session on any other folder (your Documents folder is
-fine), paste the course setup prompt, and follow it. It will set the old
+fine), paste the course setup prompt (the one-line prompt from your
+pre-class materials), and follow it. It will set the old
 folder aside as claude-code-for-pms-final-old and give you a fresh one linked
 to your repo."
 
@@ -158,8 +160,9 @@ git says "Repository not found".
    (or `git remote add origin …` if there's none). Then run
    `scripts/save.sh`, which merges anything already on GitHub.
 3. It doesn't exist, or they signed in with a different account than the one
-   they meant to use: the setup prompt fixes both. Tell them to run it again
-   from a new session on another folder.
+   they meant to use: the course setup prompt fixes both. Tell them to paste
+   it again (the one-line prompt from their pre-class materials) in a new
+   session on another folder.
 
 ## Repo created before the connectors
 
@@ -204,7 +207,7 @@ course folder, rename only the thing that blocks setup, and only by adding
 1. Say: "<name> is in the way. Can I rename it to <name>-old? Nothing in it
    will be deleted or changed."
 2. On yes, rename it by adding `-old` to its name (if that name is already
-   taken, `-old-2`, `-old-3` and so on), the same rule the setup prompt
+   taken, `-old-2`, `-old-3` and so on), the same rule `setup/SETUP.md`
    follows. Never delete it.
 3. Tell them what you renamed and where it is now.
 

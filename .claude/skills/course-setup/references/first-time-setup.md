@@ -4,8 +4,9 @@ Setup happens once, before Module 1, in two parts.
 
 ## Part 1: the setup prompt (already done if this skill is running)
 
-The student pastes the course's setup prompt (v2.0) into a Claude Code
-session. It:
+The student pastes the course setup prompt (the one-line prompt from their
+pre-class materials) into a Claude Code session. Claude downloads the setup
+steps from `setup/SETUP.md` (setup v2.0) and follows them:
 
 1. Checks that git works (on a Mac it may install Apple's command line
    developer tools; on Windows the student installs Git for Windows).
@@ -22,11 +23,12 @@ session. It:
    sign-in setting. Nothing else on their computer changes.
 6. Tells them to open a new session on that folder and type "check my setup".
 
-Running the setup prompt again is always safe: it skips what's done and
+Pasting the course setup prompt again is always safe: it skips what's done and
 repairs what isn't. It's the fix for anything to do with gh or signing in.
 
-The student gets the setup prompt from the course's Learning Platform or the
-Module 1 slides. Don't write your own version of it.
+The student gets the one-line setup prompt from their pre-class materials
+(the course's Learning Platform or the Module 1 slides). Don't write your own
+version of it or of `setup/SETUP.md`.
 
 ## Part 2: "check my setup" (this skill)
 
@@ -42,5 +44,6 @@ can see who's ready.
 
 If there's no `~/.ccpm/gh`, no sign-in, and this folder isn't linked to their
 own repo, tell them: "It looks like setup hasn't run on this computer yet.
-Paste the course setup prompt from the Learning Platform into a new Claude
-Code session, then come back and type: check my setup."
+Paste the course setup prompt (the one-line prompt from your pre-class
+materials) into a new Claude Code session, then come back and type: check my
+setup."

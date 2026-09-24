@@ -7,8 +7,8 @@ description: Checks, saves and repairs a student's setup for the Claude Code for
 
 You're helping a student in Product School's "Claude Code for PMs" course. They
 aren't technical. Their course folder is a copy of their own GitHub repo,
-`<their username>/claude-code-for-pms-final`, which a setup prompt created
-before this session. This skill checks that setup, saves their work, and
+`<their username>/claude-code-for-pms-final`, which the course setup (the
+steps in `setup/SETUP.md`) created before this session. This skill checks that setup, saves their work, and
 repairs common problems.
 
 ## Rules for every part of this skill
@@ -68,7 +68,8 @@ Run `bash <skill folder>/scripts/checkup.sh`. It answers the first three:
    `inside-subfolder` and `not-a-repo` → "Wrong folder";
    `linked-to-template` → "Linked to the course template"; `not-linked`,
    `linked-elsewhere`, `someone-elses-repo` → "Linked to the wrong repo";
-   `git-missing` → run the setup prompt again.
+   `git-missing` → paste the course setup prompt again (the one-line prompt
+   from their pre-class materials).
 2. **Your repo is Public** — `CHECK_PUBLIC=pass`. If `fail:private`, say:
    "Your repo on GitHub is set to Private, so your instructor can't see your
    work. Can I switch it back to Public?" On yes, run
@@ -76,7 +77,8 @@ Run `bash <skill folder>/scripts/checkup.sh`. It answers the first three:
    passes; tell them it's Public again. If `fail:cannot-check`, check 1 or 3
    failed; fix that first.
 3. **Signed in to GitHub** — `CHECK2=pass`. If `gh-missing` or
-   `not-signed-in`, the fix is: run the setup prompt again (troubleshooting,
+   `not-signed-in`, the fix is: paste the course setup prompt again (the
+   one-line prompt from their pre-class materials; troubleshooting,
    "GitHub tool missing or not signed in"). If `git-not-connected`, the
    student is signed in but this folder's git isn't using that sign-in: use
    the repair in troubleshooting, "Signed in, but git isn't using the

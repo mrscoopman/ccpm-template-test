@@ -14,7 +14,7 @@ and they can pick up on any computer.
    Module 2". No jargon.
 3. Run `bash <skill folder>/scripts/save.sh "<message>"`. It:
    - sets the folder's name and private GitHub email if they're missing (the
-     same values the setup prompt uses);
+     same values `setup/SETUP.md` uses);
    - commits everything (`git add -A`);
    - pushes to GitHub with `GIT_TERMINAL_PROMPT=0`;
    - if GitHub refuses the push because it has changes this computer doesn't

@@ -98,7 +98,7 @@ do_check() {
   echo "SIGNED_IN=$([ -n "$GH_USER" ] && echo yes || echo no)"
   [ -n "$GH_USER" ] && echo "GH_USER=$GH_USER"
   echo "GIT_SIGNIN=$GIT_SIGNIN"
-  # Earlier work set aside by the setup prompt, next to the course folder.
+  # Earlier work set aside by setup/SETUP.md, next to the course folder.
   if [ "$IN_REPO" = yes ] && [ -d "$(git rev-parse --show-toplevel)-old" ]; then echo "OLD_FOLDER=yes"; else echo "OLD_FOLDER=no"; fi
   echo "VISIBILITY=$VISIBILITY"
   echo "CHECK1=$CHECK1"

@@ -25,7 +25,7 @@ if ! git remote get-url origin >/dev/null 2>&1; then echo "RESULT=not-linked"; e
 branch=$(git symbolic-ref --short -q HEAD) || { echo "RESULT=detached"; exit 1; }
 if [ -n "$(git rev-parse -q --verify MERGE_HEAD 2>/dev/null)" ]; then echo "RESULT=merge-in-progress"; exit 1; fi
 
-# Name and email for this repo only, the same way the setup prompt sets them.
+# Name and email for this repo only, the same way setup/SETUP.md sets them.
 if [ -z "$(git config user.name)" ] || [ -z "$(git config user.email)" ]; then
   GH=$(ccpm_find_gh || true)
   user=; email=
