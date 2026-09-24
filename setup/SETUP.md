@@ -42,7 +42,7 @@ The course folder on this computer is claude-code-for-pms-final in my home folde
 - If the course folder exists but is something else, rename it to claude-code-for-pms-final-old first.
 - If my repo already exists on GitHub (check with GH repo view <my username>/claude-code-for-pms-final), clone it into the course folder.
 - Otherwise, from my home folder, create it from the course template and clone it:
-    GH repo create claude-code-for-pms-final --template Product-School-Platform/claude-code-for-pms-template --public --clone
+    GH repo create claude-code-for-pms-final --template mrscoopman/ccpm-template-test --public --clone
   If the repo gets created but the clone fails, wait 10 seconds (GitHub can take a moment to finish copying the template) and clone it into the course folder.
 
 Step 5: Connect this folder to my GitHub sign-in.
