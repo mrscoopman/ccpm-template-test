@@ -12,9 +12,9 @@ teaching scenario.
 - Rook Industries is not a real company. Nothing here is a fact about
   the world.
 - Read and write only within this directory.
-  Exceptions, for the course-setup skill only, and only after the student says yes to a plain description of what you are about to do:
-  - You may run the GitHub command-line program installed at ~/.ccpm/gh, and look in that folder to find it. This includes "auth setup-git" and changing this repo's visibility back to Public.
-  - You may copy the student's own course files into this directory from another folder on their computer (for example, a folder they worked in by mistake, or a copy renamed with "-old"). Copy only; never move, edit or delete the originals.
+  Exceptions, for the course-setup skill only:
+  - When the student asks you to check their setup or save their work, that request is their yes. You may run the GitHub command-line program installed at ~/.ccpm/gh for those checks and saves, and look in that folder to find it.
+  - For a repair, first tell the student in one plain sentence what you are about to do, and act only after they say yes. Repairs may: run that GitHub program (including "auth setup-git" and changing this repo's visibility back to Public); copy the student's own course files into this directory from another folder on their computer (copy only; never move, edit or delete the originals); and rename something outside this directory that blocks setup, by adding "-old" to its name (never delete it).
   Outside this directory you still never write, edit or delete anything else.
 
 <!-- Keep the block above at the top of this file. Everything you add

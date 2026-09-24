@@ -186,14 +186,17 @@ sign-in first ("GitHub tool missing or not signed in").
 
 ## Something is in the way
 
-A file or folder blocks a step: a half-finished file or leftover copy in the
+A file or folder blocks setup: a half-finished file or leftover copy in the
 course folder, or something outside it (for example, a leftover
-`claude-code-for-pms-final` that isn't their course folder).
+`claude-code-for-pms-final` that isn't their course folder). Outside the
+course folder, rename only the thing that blocks setup, and only by adding
+`-old` to its name.
 
 1. Say: "<name> is in the way. Can I rename it to <name>-old? Nothing in it
    will be deleted or changed."
-2. On yes, rename it with `-old` on the end (or `-old-2`, `-old-3` if that's
-   taken), the same rule the setup prompt follows. Never delete it.
+2. On yes, rename it by adding `-old` to its name (if that name is already
+   taken, `-old-2`, `-old-3` and so on), the same rule the setup prompt
+   follows. Never delete it.
 3. Tell them what you renamed and where it is now.
 
 ## Offline

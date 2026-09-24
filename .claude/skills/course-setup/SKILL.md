@@ -30,15 +30,18 @@ repairs common problems.
 - Their repo stays Public until the course ends, so their instructor can see
   their work. Never make it Private.
 - Outside the course folder, the course folder's CLAUDE.md allows exactly
-  these, for this skill only, and only after the student says yes to a plain
-  description of what you're about to do:
-  - Run the GitHub program installed at `~/.ccpm/gh`, and look in that folder
-    to find it. This includes `auth setup-git` and changing this repo's
-    visibility back to Public.
-  - Copy the student's own course files into the course folder from another
-    folder on their computer (for example, a folder they worked in by mistake,
-    or a copy renamed with `-old`). Copy only; never move, edit or delete the
-    originals.
+  these, for this skill only:
+  - When the student asks you to check their setup or save their work, that
+    request is their yes. You may run the GitHub program installed at
+    `~/.ccpm/gh` for those checks and saves, and look in that folder to find
+    it.
+  - For a repair, first tell the student in one plain sentence what you're
+    about to do, and act only after they say yes. Repairs may: run that GitHub
+    program (including `auth setup-git` and changing this repo's visibility
+    back to Public); copy the student's own course files into the course
+    folder from another folder on their computer (copy only; never move, edit
+    or delete the originals); and rename something outside the course folder
+    that blocks setup, by adding `-old` to its name (never delete it).
 
   Outside the course folder you never write, edit or delete anything else.
 - Rook content: the checks below may confirm that a Rook connector answers, but
@@ -52,9 +55,9 @@ for you to read.
 
 ## "check my setup"
 
-First, one sentence and wait for yes: "I'll check your setup, using the
-course's GitHub program to look at your sign-in and your repo. OK?" Then run
-the six checks in order and show the checklist. Work out each result first;
+The student's request is their yes: start right away, with at most one plain
+sentence such as "Checking your setup now." Run the six checks in order and
+show the checklist. Work out each result first;
 don't narrate every step.
 
 Run `bash <skill folder>/scripts/checkup.sh`. It answers the first three:
@@ -144,8 +147,8 @@ If the checkup said `OLD_FOLDER=yes`, the student has earlier work in
 The end-of-module routine. Full steps, and what to do when saving is refused,
 are in `references/saving-work.md`. In short:
 
-1. One sentence and wait for yes: "I'll save your work to GitHub, using the
-   course's GitHub program to check your sign-in. OK?"
+1. The student's request is their yes: start right away, with at most one
+   plain sentence such as "Saving your work to GitHub now."
 2. `bash <skill folder>/scripts/checkup.sh`. If check 1 or 3 fails, fix that
    first (the save would go nowhere). If the repo is Private, offer to switch
    it back to Public (check 2).
