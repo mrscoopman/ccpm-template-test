@@ -12,10 +12,10 @@ teaching scenario.
 - Rook Industries is not a real company. Nothing here is a fact about
   the world.
 - Read and write only within this directory.
-  One exception: when the course-setup skill needs it, you may run the
-  GitHub command-line program installed at ~/.ccpm/gh, and look in that
-  folder to find it. You still never write, edit or delete anything
-  outside this directory.
+  Exceptions, for the course-setup skill only, and only after the student says yes to a plain description of what you are about to do:
+  - You may run the GitHub command-line program installed at ~/.ccpm/gh, and look in that folder to find it. This includes "auth setup-git" and changing this repo's visibility back to Public.
+  - You may copy the student's own course files into this directory from another folder on their computer (for example, a folder they worked in by mistake, or a copy renamed with "-old"). Copy only; never move, edit or delete the originals.
+  Outside this directory you still never write, edit or delete anything else.
 
 <!-- Keep the block above at the top of this file. Everything you add
      during the course goes below this line. -->

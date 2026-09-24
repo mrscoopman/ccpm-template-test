@@ -1,8 +1,10 @@
 # Troubleshooting
 
-Symptom by symptom. Before any repair: commit the student's work (see
-saving-work.md), and ask before changing anything beyond a normal save.
-Rename instead of deleting. When a fix doesn't work, tell the student to post
+Symptom by symptom. You do every repair yourself; the student never does
+file work by hand. For each one: commit the student's work first (see
+saving-work.md), tell them in one plain sentence what you're about to do,
+wait for their yes, do it, and tell them the result. Rename instead of
+deleting. When a fix doesn't work, tell the student to post
 in their course Slack channel: what they were trying to do, the exact error
 message, and whether they're on a Mac or Windows.
 
@@ -17,17 +19,38 @@ The GitHub tool (gh) lives in `~/.ccpm/gh` and keeps the student signed in.
 It may be missing if the folder was renamed or another tool cleaned it up; the
 sign-in may be gone if they signed out or GitHub ended it.
 
-If `SIGNED_IN=yes` but git still says "could not read Username" or
-"Authentication failed", git isn't using the sign-in yet. The fix is the
-same: the setup prompt always reconnects git to the sign-in, even when the
-student is already signed in. (Don't do this yourself with gh: it changes
-settings outside the course folder.)
+**Signed in, but git isn't using the sign-in.** `SIGNED_IN=yes`, but git
+says "could not read Username" or "Authentication failed".
 
-Tell the student, "Your GitHub sign-in needs a refresh. Open a new
+1. Say: "Your computer is signed in to GitHub, but saving isn't using that
+   sign-in yet. Can I connect the two?"
+2. On yes, run `<GH> auth setup-git` (GH is the `GH=` path from the
+   checkup; it needs no password).
+3. Run `bash <skill folder>/scripts/save.sh "<message>"` again and tell them
+   whether their work is saved now.
+
+**Missing or signed out.** Tell the student, "Your GitHub sign-in needs a refresh. Open a new
 session in the Claude app, paste the course setup prompt again, and follow
 it. It only redoes what's missing. Then come back to this folder and type:
 check my setup." Don't sign them in yourself, and never ask for a password or
 token.
+
+## My repo is Private, or my instructor can't see my work
+
+`CHECK_PUBLIC=fail:private`, or the student says their instructor can't see
+their work or their repo link shows "404". Their repo stays Public until the
+course ends, so their instructor (and the instructor's setup check) can see
+it.
+
+1. Say: "Your repo on GitHub is set to Private, so your instructor can't see
+   your work. Can I switch it back to Public?"
+2. On yes: `bash <skill folder>/scripts/checkup.sh make-public`.
+3. `RESULT=public` or `already-public`: tell them it's Public again and give
+   the link `https://github.com/<GH_USER>/claude-code-for-pms-final`.
+   `RESULT=failed`: post in Slack with the `ERROR` line and Mac or Windows.
+
+If `CHECK_PUBLIC=pass` and the instructor still can't see the work, it
+probably hasn't been saved yet: run "save my work".
 
 ## A Rook connector doesn't show up
 
@@ -74,10 +97,20 @@ computer shows paths. If `claude-code-for-pms-final` doesn't exist in their
 home folder, they need the setup prompt (first-time-setup.md).
 
 If they have work in the wrong folder (for example, from an old unzipped
-copy), don't copy it yourself: that means reading outside the course folder.
-Tell them they can copy those files into the course folder themselves, in
-Finder (Mac) or File Explorer (Windows), and to keep both copies rather than
-replace a file that's already there. Then type "save my work".
+copy) and the course folder exists, copy it in for them:
+
+1. Say: "You have course work in <that folder>. Can I copy it into your
+   course folder? If a file is in both places, I'll keep both copies, and I
+   won't change anything in <that folder>."
+2. On yes, from inside the course folder:
+   `cd "<course folder>" && bash .claude/skills/course-setup/scripts/copy-in.sh "<that folder>"`.
+   It commits the course folder first, copies new files, and saves a file
+   that's already there with different content next to it as
+   `<name>-from-old-folder`. It skips identical files and course settings.
+3. `cd "<course folder>" && bash .claude/skills/course-setup/scripts/save.sh "Copy in work from another folder"`.
+4. Tell them how many files came over (`NEW_FILES`), and name any file that
+   now has a `-from-old-folder` copy (`KEPT_BOTH=` lines) so they can compare
+   the two. Then give them the new-session instructions above.
 
 ## Linked to the course template
 
@@ -89,8 +122,18 @@ Fix: "This folder is linked to the course template instead of your own
 GitHub repo. Open a new session on any other folder (your Documents folder is
 fine), paste the course setup prompt, and follow it. It will set the old
 folder aside as claude-code-for-pms-final-old and give you a fresh one linked
-to your repo." If they had work in the old folder, they can copy it into the
-new one themselves, as in "Wrong folder".
+to your repo."
+
+When they come back in the new course folder and `OLD_FOLDER=yes` (a
+`claude-code-for-pms-final-old` folder sits next to it), copy their work
+across for them:
+
+1. Say: "Your earlier work is in claude-code-for-pms-final-old. Can I copy
+   it into your course folder? If a file is in both places, I'll keep both
+   copies, and I won't change the old folder."
+2. On yes: `bash <skill folder>/scripts/copy-in.sh "<course folder>-old"`,
+   then `bash <skill folder>/scripts/save.sh "Copy in earlier work"`.
+3. Tell them the result, as in "Wrong folder".
 
 ## Linked to the wrong repo
 
@@ -143,11 +186,15 @@ sign-in first ("GitHub tool missing or not signed in").
 
 ## Something is in the way
 
-A file or folder inside the course folder blocks a step (a half-finished
-file, a leftover copy). Rename it with `-old` on the end (or `-old-2`,
-`-old-3` if that's taken) and tell the student what you renamed. Never
-delete it. If what's in the way is outside the course folder, don't touch
-it: the setup prompt handles the course folder itself.
+A file or folder blocks a step: a half-finished file or leftover copy in the
+course folder, or something outside it (for example, a leftover
+`claude-code-for-pms-final` that isn't their course folder).
+
+1. Say: "<name> is in the way. Can I rename it to <name>-old? Nothing in it
+   will be deleted or changed."
+2. On yes, rename it with `-old` on the end (or `-old-2`, `-old-3` if that's
+   taken), the same rule the setup prompt follows. Never delete it.
+3. Tell them what you renamed and where it is now.
 
 ## Offline
 

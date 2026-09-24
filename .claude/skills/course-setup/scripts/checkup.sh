@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 # course-setup checkup. Run from the session's folder with bash.
 #
-#   bash checkup.sh                  checks 1 and 2 (folder + GitHub sign-in)
+#   bash checkup.sh                  folder, repo visibility and GitHub sign-in
+#   bash checkup.sh make-public      switches the student's repo back to Public
+#                                    (only after the student says yes)
 #   bash checkup.sh record WIKI DB   writes setup/setup-complete.md; WIKI and DB
-#                                    are pass or fail (checks 3 and 4)
+#                                    are pass or fail (the Rook checks)
 #   bash checkup.sh confirm          checks GitHub has this commit's
 #                                    setup/setup-complete.md; prints its link
 #
@@ -60,6 +62,22 @@ elif [ -z "$GH_USER" ]; then CHECK2=fail:not-signed-in
 else CHECK2=pass
 fi
 
+# ---- visibility: the student's repo stays Public through the course
+repo_visibility() {
+  "$GH" api "repos/$OWNER/$REPO" --jq .visibility 2>/dev/null | tr -d '\r'
+}
+VISIBILITY=unknown
+if [ "$CHECK1" != pass ] || [ "$CHECK2" != pass ]; then
+  CHECK_PUBLIC=fail:cannot-check
+else
+  VISIBILITY=$(repo_visibility)
+  case "$VISIBILITY" in
+    public) CHECK_PUBLIC=pass ;;
+    private|internal) CHECK_PUBLIC=fail:private ;;
+    *) VISIBILITY=unknown; CHECK_PUBLIC=fail:cannot-check ;;
+  esac
+fi
+
 mark() { case "$1" in pass) printf '✓' ;; *) printf '✗' ;; esac; }
 
 do_check() {
@@ -72,8 +90,28 @@ do_check() {
   [ -n "$GH_VERSION" ] && echo "GH_VERSION=$GH_VERSION"
   echo "SIGNED_IN=$([ -n "$GH_USER" ] && echo yes || echo no)"
   [ -n "$GH_USER" ] && echo "GH_USER=$GH_USER"
+  # Earlier work set aside by the setup prompt, next to the course folder.
+  if [ "$IN_REPO" = yes ] && [ -d "$(git rev-parse --show-toplevel)-old" ]; then echo "OLD_FOLDER=yes"; else echo "OLD_FOLDER=no"; fi
+  echo "VISIBILITY=$VISIBILITY"
   echo "CHECK1=$CHECK1"
+  echo "CHECK_PUBLIC=$CHECK_PUBLIC"
   echo "CHECK2=$CHECK2"
+}
+
+do_make_public() {
+  local out rc
+  if [ "$CHECK1" != pass ] || [ "$CHECK2" != pass ]; then
+    echo "RESULT=not-changed (fix the folder and sign-in checks first)"; echo "CHECK1=$CHECK1"; echo "CHECK2=$CHECK2"; exit 1
+  fi
+  if [ "$VISIBILITY" = public ]; then echo "RESULT=already-public"; exit 0; fi
+  out=$("$GH" repo edit "$OWNER/$REPO" --visibility public --accept-visibility-change-consequences 2>&1); rc=$?
+  if [ $rc -eq 0 ] && [ "$(repo_visibility)" = public ]; then
+    echo "RESULT=public"
+  else
+    echo "RESULT=failed"
+    echo "ERROR=$(printf '%s\n' "$out" | tr -d '\r' | grep -v '^ *$' | head -n 1)"
+    exit 1
+  fi
 }
 
 do_record() {
@@ -100,6 +138,7 @@ do_record() {
 ## Checks
 
 - $(mark "$CHECK1") Course folder linked to my GitHub repo
+- $(mark "$CHECK_PUBLIC") My repo is Public
 - $(mark "$CHECK2") Signed in to GitHub
 - $(mark "$wiki") Rook wiki answers
 - $(mark "$db") Rook database answers
@@ -129,11 +168,13 @@ do_confirm() {
     [ -z "$remote_sha" ] && echo "REASON=not-on-github" || echo "REASON=github-has-an-older-copy"
   fi
   echo "LINK=https://github.com/$OWNER/$REPO/blob/$branch/setup/setup-complete.md"
+  [ "$remote_sha" = "$local_sha" ]
 }
 
 case "${1:-check}" in
   check) do_check ;;
   record) shift; do_record "$@" ;;
+  make-public) do_make_public ;;
   confirm) do_confirm ;;
-  *) echo "RESULT=usage: checkup.sh [check|record WIKI DB|confirm]"; exit 1 ;;
+  *) echo "RESULT=usage: checkup.sh [check|make-public|record WIKI DB|confirm]"; exit 1 ;;
 esac

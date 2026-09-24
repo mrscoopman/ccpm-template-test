@@ -1,6 +1,6 @@
 ---
 name: course-setup
-description: Checks, saves and repairs a student's setup for the Claude Code for PMs course. Use it when the student says "check my setup" (or "is my setup working", "am I ready for Module 1", "test my setup"); when they say "save my work" (or "save my progress", "push my work", "back up my work", "I'm done with this module"); and when they describe a setup problem in their own words, such as GitHub asking them to sign in, their work not showing up on GitHub, saving failing, "rook-wiki" or "rook-database" missing or not answering, or opening the wrong folder.
+description: Checks, saves and repairs a student's setup for the Claude Code for PMs course. Use it when the student says "check my setup" (or "is my setup working", "am I ready for Module 1", "test my setup"); when they say "save my work" (or "save my progress", "push my work", "back up my work", "I'm done with this module"); and when they describe a setup problem in their own words, such as GitHub asking them to sign in, their work not showing up on GitHub, saving failing, their repo being private or their instructor not seeing their work, "rook-wiki" or "rook-database" missing or not answering, or opening the wrong folder.
 ---
 
 # Course setup
@@ -24,12 +24,23 @@ repairs common problems.
   least `git add -A && git commit`), so a repair can never lose it.
 - Never delete anything. If a file or folder is in the way, rename it with
   `-old` on the end and tell the student.
-- Ask the student before anything that changes their work or their GitHub repo
-  beyond a normal save.
-- The course's GitHub program is installed at `~/.ccpm/gh`, outside the
-  course folder. The course folder's CLAUDE.md allows one exception for this
-  skill: you may run that program, and look in that folder to find it. You
-  still never write, edit or delete anything outside the course folder.
+- Repairs are yours to do, not the student's. For each one, tell the student
+  in one plain sentence what you're about to do, wait for their yes, do it,
+  then tell them the result. The student never does file work by hand.
+- Their repo stays Public until the course ends, so their instructor can see
+  their work. Never make it Private.
+- Outside the course folder, the course folder's CLAUDE.md allows exactly
+  these, for this skill only, and only after the student says yes to a plain
+  description of what you're about to do:
+  - Run the GitHub program installed at `~/.ccpm/gh`, and look in that folder
+    to find it. This includes `auth setup-git` and changing this repo's
+    visibility back to Public.
+  - Copy the student's own course files into the course folder from another
+    folder on their computer (for example, a folder they worked in by mistake,
+    or a copy renamed with `-old`). Copy only; never move, edit or delete the
+    originals.
+
+  Outside the course folder you never write, edit or delete anything else.
 - Rook content: the checks below may confirm that a Rook connector answers, but
   never show, summarize or comment on what it returned beyond the one page
   title or the one number named in the check.
@@ -41,10 +52,12 @@ for you to read.
 
 ## "check my setup"
 
-Run the five checks in order, then show the checklist. Work out each result
-first; don't narrate every step.
+First, one sentence and wait for yes: "I'll check your setup, using the
+course's GitHub program to look at your sign-in and your repo. OK?" Then run
+the six checks in order and show the checklist. Work out each result first;
+don't narrate every step.
 
-**Checks 1 and 2.** Run `bash <skill folder>/scripts/checkup.sh`.
+Run `bash <skill folder>/scripts/checkup.sh`. It answers the first three:
 
 1. **Course folder linked to your GitHub repo** — `CHECK1=pass`. If it failed,
    use the matching fix from `references/troubleshooting.md`:
@@ -52,22 +65,28 @@ first; don't narrate every step.
    `linked-to-template` → "Linked to the course template"; `not-linked`,
    `linked-elsewhere`, `someone-elses-repo` → "Linked to the wrong repo";
    `git-missing` → run the setup prompt again.
-2. **Signed in to GitHub** — `CHECK2=pass`. If `gh-missing` or
+2. **Your repo is Public** — `CHECK_PUBLIC=pass`. If `fail:private`, say:
+   "Your repo on GitHub is set to Private, so your instructor can't see your
+   work. Can I switch it back to Public?" On yes, run
+   `bash <skill folder>/scripts/checkup.sh make-public`. `RESULT=public`
+   passes; tell them it's Public again. If `fail:cannot-check`, check 1 or 3
+   failed; fix that first.
+3. **Signed in to GitHub** — `CHECK2=pass`. If `gh-missing` or
    `not-signed-in`, the fix is: run the setup prompt again (troubleshooting,
    "GitHub tool missing or not signed in").
 
-If check 1 or 2 fails, still do checks 3 and 4, but skip check 5 (saving can't
+If check 1 or 3 fails, still do checks 4 and 5, but skip check 6 (saving can't
 work yet) and mark it ✗ with "fix the checks above first".
 
-**Check 3. Rook wiki answers.** Make one call to the rook-wiki tool
+**Check 4. Rook wiki answers.** Make one call to the rook-wiki tool
 `search_wiki` with the query `Team directory`. It passes if the reply lists a
 result titled "Team directory". Show the student only that title.
 
-**Check 4. Rook database answers.** Make one call to the rook-database tool
+**Check 5. Rook database answers.** Make one call to the rook-database tool
 `run_query` with `select count(*) as row_count from handlers`. It passes if the
 count is above zero. Show the student only the number.
 
-For checks 3 and 4:
+For checks 4 and 5:
 
 - **Busy, not broken.** If the reply says the connector "is busy right now",
   or the wiki "is not available yet", or it starts "Something went wrong" and
@@ -85,12 +104,13 @@ For checks 3 and 4:
   up".
 - Any other reply is ✗: note the exact message for the Slack post.
 
-**Check 5. Saving works.** Only if checks 1 and 2 passed:
+**Check 6. Saving works.** Only if checks 1 and 3 passed:
 
-1. `bash <skill folder>/scripts/checkup.sh record <3> <4>`, where `<3>` and
-   `<4>` are `pass` or `fail`. This writes `setup/setup-complete.md` with the
+1. `bash <skill folder>/scripts/checkup.sh record <4> <5>`, where `<4>` and
+   `<5>` are `pass` or `fail`. This writes `setup/setup-complete.md` with the
    username, date, Mac or Windows, the setup prompt version, and each check's
-   result. Don't add anything else to that file: no email, computer name or
+   result, including whether the repo is Public (it checks that again
+   itself). Don't add anything else to that file: no email, computer name or
    paths.
 2. `bash <skill folder>/scripts/save.sh "Setup complete" setup/setup-complete.md`.
    `RESULT=saved` is what you want. For anything else, see "save my work"
@@ -102,11 +122,16 @@ For checks 3 and 4:
 
 ```
 ✓ Course folder linked to your GitHub repo
+✓ Your repo is Public
 ✓ Signed in to GitHub
 ✓ Rook wiki answers (found "Team directory")
 ✓ Rook database answers (<the count> rows)
 ✓ Saving works: <link>
 ```
+
+If the checkup said `OLD_FOLDER=yes`, the student has earlier work in
+`claude-code-for-pms-final-old`: offer to copy it in (troubleshooting,
+"Linked to the course template").
 
 - All ✓: "You're all set. You're ready for Module 1."
 - Any ✗: give the fix for the first ✗ in one or two plain sentences. If the
@@ -119,11 +144,14 @@ For checks 3 and 4:
 The end-of-module routine. Full steps, and what to do when saving is refused,
 are in `references/saving-work.md`. In short:
 
-1. `bash <skill folder>/scripts/checkup.sh`. If check 1 or 2 fails, fix that
-   first (the save would go nowhere).
-2. Pick a short plain message from what changed, like "Module 2 work".
-3. `bash <skill folder>/scripts/save.sh "<message>"`.
-4. `RESULT=saved`: tell them their work is saved to GitHub and give the link
+1. One sentence and wait for yes: "I'll save your work to GitHub, using the
+   course's GitHub program to check your sign-in. OK?"
+2. `bash <skill folder>/scripts/checkup.sh`. If check 1 or 3 fails, fix that
+   first (the save would go nowhere). If the repo is Private, offer to switch
+   it back to Public (check 2).
+3. Pick a short plain message from what changed, like "Module 2 work".
+4. `bash <skill folder>/scripts/save.sh "<message>"`.
+5. `RESULT=saved`: tell them their work is saved to GitHub and give the link
    `https://github.com/<GH_USER>/claude-code-for-pms-final`.
    `COMMITTED=nothing-new` with `RESULT=saved` means everything was already
    saved; say so.
