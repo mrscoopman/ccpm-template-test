@@ -26,9 +26,10 @@ repairs common problems.
   `-old` on the end and tell the student.
 - Ask the student before anything that changes their work or their GitHub repo
   beyond a normal save.
-- The course's GitHub tool lives in `~/.ccpm/gh`, outside the course folder.
-  Running it is part of this skill and is allowed; it reads and writes no
-  course work outside this folder.
+- The course's GitHub program is installed at `~/.ccpm/gh`, outside the
+  course folder. The course folder's CLAUDE.md allows one exception for this
+  skill: you may run that program, and look in that folder to find it. You
+  still never write, edit or delete anything outside the course folder.
 - Rook content: the checks below may confirm that a Rook connector answers, but
   never show, summarize or comment on what it returned beyond the one page
   title or the one number named in the check.
@@ -76,10 +77,12 @@ For checks 3 and 4:
 - **Tools not there.** If this session has no rook-wiki or rook-database
   tools, mark ✗ and tell the student: "Start a new session: in the Claude app,
   go to the Code tab, click + New session, choose your course folder
-  (<full path>) as the Project folder, and type: check my setup. If it asks
-  whether to trust this folder, or whether to allow the rook-wiki and
-  rook-database servers, say yes." More in troubleshooting, "A Rook
-  connector doesn't show up".
+  (<full path>) as the Project folder, and type: check my setup. If Claude
+  asks whether you trust this folder, or whether to allow the rook-wiki and
+  rook-database servers, say yes." The trust question is the normal first
+  prompt on a new course folder; the connectors only start once the student
+  says yes to it. More in troubleshooting, "A Rook connector doesn't show
+  up".
 - Any other reply is ✗: note the exact message for the Slack post.
 
 **Check 5. Saving works.** Only if checks 1 and 2 passed:

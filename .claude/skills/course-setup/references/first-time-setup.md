@@ -30,7 +30,9 @@ Module 1 slides. Don't write your own version of it.
 
 Opening the course folder in a new session gives Claude Code the two Rook
 connectors (rook-wiki and rook-database, set up in the folder's `.mcp.json`)
-and this skill. The check confirms the folder, the sign-in, both connectors
+and this skill. The first time, Claude asks whether the student trusts the
+folder. That's the expected first prompt: once they say yes, the connectors
+start with no further questions. The check confirms the folder, the sign-in, both connectors
 and saving, and leaves `setup/setup-complete.md` on GitHub so the instructor
 can see who's ready.
 

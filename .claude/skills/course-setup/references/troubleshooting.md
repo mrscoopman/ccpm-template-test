@@ -18,11 +18,12 @@ It may be missing if the folder was renamed or another tool cleaned it up; the
 sign-in may be gone if they signed out or GitHub ended it.
 
 If `SIGNED_IN=yes` but git still says "could not read Username" or
-"Authentication failed", git isn't using the sign-in yet. Run
-`<GH> auth setup-git` (GH is the `GH=` path from the checkup; it needs no
-password), then save again.
+"Authentication failed", git isn't using the sign-in yet. The fix is the
+same: the setup prompt always reconnects git to the sign-in, even when the
+student is already signed in. (Don't do this yourself with gh: it changes
+settings outside the course folder.)
 
-Otherwise, tell the student, "Your GitHub sign-in needs a refresh. Open a new
+Tell the student, "Your GitHub sign-in needs a refresh. Open a new
 session in the Claude app, paste the course setup prompt again, and follow
 it. It only redoes what's missing. Then come back to this folder and type:
 check my setup." Don't sign them in yourself, and never ask for a password or
@@ -35,11 +36,14 @@ This session has no rook-wiki or rook-database tools.
 1. Check the folder: `CHECK1` must pass and the folder must have `.mcp.json`
    at its top. No `.mcp.json`? See "Repo created before the connectors".
 2. The connectors load when a session starts, and only for the folder the
-   session was opened on. Tell the student: "Start a new session: in the
-   Claude app, go to the Code tab, click + New session, choose your course
-   folder (<full path>) as the Project folder, and type: check my setup. If
-   it asks whether to trust this folder, or whether to allow the rook-wiki
-   and rook-database servers, say yes."
+   session was opened on. The first time a student opens the course folder,
+   Claude asks whether they trust it. That's expected, and the connectors
+   only start after they say yes; until then they show as "pending
+   approval". Tell the student: "Start a new session: in the Claude app, go
+   to the Code tab, click + New session, choose your course folder
+   (<full path>) as the Project folder, and type: check my setup. If Claude
+   asks whether you trust this folder, or whether to allow the rook-wiki and
+   rook-database servers, say yes."
 3. If they answered "no" to allowing the servers before, Claude Code
    remembers that in `.claude/settings.local.json` in the course folder
    (`disabledMcpjsonServers`). With their OK, rename that file to
@@ -70,9 +74,10 @@ computer shows paths. If `claude-code-for-pms-final` doesn't exist in their
 home folder, they need the setup prompt (first-time-setup.md).
 
 If they have work in the wrong folder (for example, from an old unzipped
-copy), ask whether they want it copied into the course folder. Copy, don't
-move, and don't overwrite: a file that already exists in the course folder
-gets the copy saved with `-old` added to its name.
+copy), don't copy it yourself: that means reading outside the course folder.
+Tell them they can copy those files into the course folder themselves, in
+Finder (Mac) or File Explorer (Windows), and to keep both copies rather than
+replace a file that's already there. Then type "save my work".
 
 ## Linked to the course template
 
@@ -84,8 +89,8 @@ Fix: "This folder is linked to the course template instead of your own
 GitHub repo. Open a new session on any other folder (your Documents folder is
 fine), paste the course setup prompt, and follow it. It will set the old
 folder aside as claude-code-for-pms-final-old and give you a fresh one linked
-to your repo." Then offer to copy any work from the `-old` folder into the new
-one (copy, don't overwrite, as in "Wrong folder").
+to your repo." If they had work in the old folder, they can copy it into the
+new one themselves, as in "Wrong folder".
 
 ## Linked to the wrong repo
 
@@ -138,9 +143,11 @@ sign-in first ("GitHub tool missing or not signed in").
 
 ## Something is in the way
 
-A file or folder blocks a step (a leftover `claude-code-for-pms-final`, a
-half-finished file). Rename it with `-old` on the end (or `-old-2`, `-old-3`
-if that's taken) and tell the student what you renamed. Never delete it.
+A file or folder inside the course folder blocks a step (a half-finished
+file, a leftover copy). Rename it with `-old` on the end (or `-old-2`,
+`-old-3` if that's taken) and tell the student what you renamed. Never
+delete it. If what's in the way is outside the course folder, don't touch
+it: the setup prompt handles the course folder itself.
 
 ## Offline
 

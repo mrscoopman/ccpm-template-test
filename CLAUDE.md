@@ -12,6 +12,10 @@ teaching scenario.
 - Rook Industries is not a real company. Nothing here is a fact about
   the world.
 - Read and write only within this directory.
+  One exception: when the course-setup skill needs it, you may run the
+  GitHub command-line program installed at ~/.ccpm/gh, and look in that
+  folder to find it. You still never write, edit or delete anything
+  outside this directory.
 
 <!-- Keep the block above at the top of this file. Everything you add
      during the course goes below this line. -->
