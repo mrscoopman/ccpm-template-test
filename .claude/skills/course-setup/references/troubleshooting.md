@@ -19,20 +19,22 @@ The GitHub tool (gh) lives in `~/.ccpm/gh` and keeps the student signed in.
 It may be missing if the folder was renamed or another tool cleaned it up; the
 sign-in may be gone if they signed out or GitHub ended it.
 
-**Signed in, but git isn't using the sign-in.** `SIGNED_IN=yes`, but git
+**Signed in, but git isn't using the sign-in.** `CHECK2=fail:git-not-connected`
+(`SIGNED_IN=yes`, `GIT_SIGNIN=not-connected`), or `SIGNED_IN=yes` but git
 says "could not read Username" or "Authentication failed".
 
 1. Say: "Your computer is signed in to GitHub, but saving isn't using that
    sign-in yet. Can I connect the two?"
-2. On yes, set the course folder's own git setting so it saves using that
-   sign-in. Change the course folder only, never git's settings for the rest
-   of their computer (so no `auth setup-git` and no `git config --global`).
-   From the course folder, with GH the `GH=` path from the checkup (it needs
-   no password):
-   `git config --local --replace-all credential.https://github.com.helper ""`
-   `git config --local --add credential.https://github.com.helper '!"<GH>" auth git-credential'`
-   The empty entry clears any other sign-in method for this folder only.
-   Check it with `GIT_TERMINAL_PROMPT=0 git ls-remote origin`.
+2. On yes, run `bash <skill folder>/scripts/checkup.sh connect-git` from the
+   course folder. It sets the course folder's own git setting, the same one
+   the setup prompt's Step 5 sets (an empty
+   `credential.https://github.com.helper` entry, then one that runs the
+   GitHub tool with `auth git-credential`), and checks it with
+   `GIT_TERMINAL_PROMPT=0 git ls-remote origin`. It needs no password and
+   never changes git's settings for the rest of their computer: never run
+   `auth setup-git` or `git config --global`. `RESULT=connected` is what you
+   want; `RESULT=failed`: post in Slack with the `ERROR` line and Mac or
+   Windows.
 3. Run `bash <skill folder>/scripts/save.sh "<message>"` again and tell them
    whether their work is saved now.
 

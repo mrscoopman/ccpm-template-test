@@ -37,13 +37,12 @@ repairs common problems.
     it.
   - For a repair, first tell the student in one plain sentence what you're
     about to do, and act only after they say yes. Repairs may: run that GitHub
-    program (including changing this repo's visibility back to Public, but
-    never `auth setup-git`: connect git to its sign-in in the course folder's
-    own git settings only, never git's settings for the rest of the
-    computer); copy the student's own course files into the course
-    folder from another folder on their computer (copy only; never move, edit
-    or delete the originals); and rename something outside the course folder
-    that blocks setup, by adding `-old` to its name (never delete it).
+    program (including setting this folder's own git sign-in setting and
+    changing this repo's visibility back to Public); copy the student's own
+    course files into the course folder from another folder on their
+    computer (copy only; never move, edit or delete the originals); and
+    rename something outside the course folder that blocks setup, by adding
+    `-old` to its name (never delete it).
 
   Outside the course folder you never write, edit or delete anything else.
 - Rook content: the checks below may confirm that a Rook connector answers, but
@@ -78,7 +77,10 @@ Run `bash <skill folder>/scripts/checkup.sh`. It answers the first three:
    failed; fix that first.
 3. **Signed in to GitHub** — `CHECK2=pass`. If `gh-missing` or
    `not-signed-in`, the fix is: run the setup prompt again (troubleshooting,
-   "GitHub tool missing or not signed in").
+   "GitHub tool missing or not signed in"). If `git-not-connected`, the
+   student is signed in but this folder's git isn't using that sign-in: use
+   the repair in troubleshooting, "Signed in, but git isn't using the
+   sign-in".
 
 If check 1 or 3 fails, still do checks 4 and 5, but skip check 6 (saving can't
 work yet) and mark it ✗ with "fix the checks above first".

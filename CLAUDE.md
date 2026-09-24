@@ -14,7 +14,7 @@ teaching scenario.
 - Read and write only within this directory.
   Exceptions, for the course-setup skill only:
   - When the student asks you to check their setup or save their work, that request is their yes. You may run the GitHub command-line program installed at ~/.ccpm/gh for those checks and saves, and look in that folder to find it.
-  - For a repair, first tell the student in one plain sentence what you are about to do, and act only after they say yes. Repairs may: run that GitHub program (including changing this repo's visibility back to Public, but never "auth setup-git"; connect git to its sign-in in this directory's own git settings only, never git's settings for the rest of the computer); copy the student's own course files into this directory from another folder on their computer (copy only; never move, edit or delete the originals); and rename something outside this directory that blocks setup, by adding "-old" to its name (never delete it).
+  - For a repair, first tell the student in one plain sentence what you are about to do, and act only after they say yes. Repairs may: run that GitHub program (including setting this folder's own git sign-in setting and changing this repo's visibility back to Public); copy the student's own course files into this directory from another folder on their computer (copy only; never move, edit or delete the originals); and rename something outside this directory that blocks setup, by adding "-old" to its name (never delete it).
   Outside this directory you still never write, edit or delete anything else.
 
 <!-- Keep the block above at the top of this file. Everything you add

@@ -49,6 +49,33 @@ ccpm_gh_user() {
   "$1" api user --jq .login 2>/dev/null | tr -d '\r'
 }
 
+# Whether this folder's own git setting saves to GitHub through the GitHub
+# tool's sign-in: an empty credential.https://github.com.helper entry (which
+# clears other sign-in methods for this folder only), then one that runs gh
+# with "auth git-credential". Reads the folder's local git config only.
+# Prints connected or not-connected.
+ccpm_git_signin() {
+  local gh=$1 vals last
+  vals=$(git config --local --get-all credential.https://github.com.helper 2>/dev/null | tr -d '\r')
+  last=$(printf '%s\n' "$vals" | tail -n 1)
+  case "$last" in
+    *"auth git-credential"*) ;;
+    *) echo not-connected; return 0 ;;
+  esac
+  case "$last" in
+    *"$gh"*|*.ccpm/gh/*|*'.ccpm\gh\'*) ;;
+    *) echo not-connected; return 0 ;;
+  esac
+  if printf '%s\n' "$vals" | sed '$d' | grep -q '^$'; then echo connected; else echo not-connected; fi
+}
+
+# Sets this folder's own git setting to save through gh's sign-in (the setup
+# prompt's Step 5). Never touches git's settings for the rest of the computer.
+ccpm_connect_git() {
+  git config --local --replace-all credential.https://github.com.helper "" &&
+    git config --local --add credential.https://github.com.helper "!\"$1\" auth git-credential"
+}
+
 # "owner repo" for a github.com remote URL, else nothing. Never echoes the
 # URL itself, so a password or token stored in a remote URL can't leak.
 ccpm_parse_github() {

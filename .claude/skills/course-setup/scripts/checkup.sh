@@ -4,6 +4,10 @@
 #   bash checkup.sh                  folder, repo visibility and GitHub sign-in
 #   bash checkup.sh make-public      switches the student's repo back to Public
 #                                    (only after the student says yes)
+#   bash checkup.sh connect-git      sets this folder's own git setting to save
+#                                    through the GitHub tool's sign-in (only
+#                                    after the student says yes); never changes
+#                                    git's settings for the rest of the computer
 #   bash checkup.sh record WIKI DB   writes setup/setup-complete.md; WIKI and DB
 #                                    are pass or fail (the Rook checks)
 #   bash checkup.sh confirm          checks GitHub has this commit's
@@ -56,9 +60,12 @@ EOF
   fi
 fi
 
-# ---- check 2: signed in to GitHub
+# ---- check 2: signed in to GitHub, and this folder's git uses that sign-in
+GIT_SIGNIN=not-connected
+[ "$IN_REPO" = yes ] && [ -n "$GH" ] && GIT_SIGNIN=$(ccpm_git_signin "$GH")
 if [ -z "$GH" ]; then CHECK2=fail:gh-missing
 elif [ -z "$GH_USER" ]; then CHECK2=fail:not-signed-in
+elif [ "$IN_REPO" = yes ] && [ "$GIT_SIGNIN" != connected ]; then CHECK2=fail:git-not-connected
 else CHECK2=pass
 fi
 
@@ -67,7 +74,7 @@ repo_visibility() {
   "$GH" api "repos/$OWNER/$REPO" --jq .visibility 2>/dev/null | tr -d '\r'
 }
 VISIBILITY=unknown
-if [ "$CHECK1" != pass ] || [ "$CHECK2" != pass ]; then
+if [ "$CHECK1" != pass ] || [ -z "$GH_USER" ]; then
   CHECK_PUBLIC=fail:cannot-check
 else
   VISIBILITY=$(repo_visibility)
@@ -90,6 +97,7 @@ do_check() {
   [ -n "$GH_VERSION" ] && echo "GH_VERSION=$GH_VERSION"
   echo "SIGNED_IN=$([ -n "$GH_USER" ] && echo yes || echo no)"
   [ -n "$GH_USER" ] && echo "GH_USER=$GH_USER"
+  echo "GIT_SIGNIN=$GIT_SIGNIN"
   # Earlier work set aside by the setup prompt, next to the course folder.
   if [ "$IN_REPO" = yes ] && [ -d "$(git rev-parse --show-toplevel)-old" ]; then echo "OLD_FOLDER=yes"; else echo "OLD_FOLDER=no"; fi
   echo "VISIBILITY=$VISIBILITY"
@@ -100,7 +108,7 @@ do_check() {
 
 do_make_public() {
   local out rc
-  if [ "$CHECK1" != pass ] || [ "$CHECK2" != pass ]; then
+  if [ "$CHECK1" != pass ] || [ -z "$GH_USER" ]; then
     echo "RESULT=not-changed (fix the folder and sign-in checks first)"; echo "CHECK1=$CHECK1"; echo "CHECK2=$CHECK2"; exit 1
   fi
   if [ "$VISIBILITY" = public ]; then echo "RESULT=already-public"; exit 0; fi
@@ -110,6 +118,22 @@ do_make_public() {
   else
     echo "RESULT=failed"
     echo "ERROR=$(printf '%s\n' "$out" | tr -d '\r' | grep -v '^ *$' | head -n 1)"
+    exit 1
+  fi
+}
+
+do_connect_git() {
+  local out rc
+  if [ "$CHECK1" != pass ] || [ -z "$GH_USER" ]; then
+    echo "RESULT=not-changed (fix the folder and sign-in checks first)"; echo "CHECK1=$CHECK1"; echo "CHECK2=$CHECK2"; exit 1
+  fi
+  if ! ccpm_connect_git "$GH"; then echo "RESULT=failed"; echo "ERROR=could not change this folder's git setting"; exit 1; fi
+  out=$(GIT_TERMINAL_PROMPT=0 git ls-remote origin 2>&1 >/dev/null); rc=$?
+  if [ $rc -eq 0 ] && [ "$(ccpm_git_signin "$GH")" = connected ]; then
+    echo "RESULT=connected"
+  else
+    echo "RESULT=failed"
+    echo "ERROR=$(printf '%s\n' "$out" | tr -d '\r' | ccpm_scrub | grep -v '^ *$' | head -n 1)"
     exit 1
   fi
 }
@@ -175,6 +199,7 @@ case "${1:-check}" in
   check) do_check ;;
   record) shift; do_record "$@" ;;
   make-public) do_make_public ;;
+  connect-git) do_connect_git ;;
   confirm) do_confirm ;;
-  *) echo "RESULT=usage: checkup.sh [check|make-public|record WIKI DB|confirm]"; exit 1 ;;
+  *) echo "RESULT=usage: checkup.sh [check|make-public|connect-git|record WIKI DB|confirm]"; exit 1 ;;
 esac
