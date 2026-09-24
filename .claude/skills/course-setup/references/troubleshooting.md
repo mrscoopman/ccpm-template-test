@@ -17,7 +17,12 @@ The GitHub tool (gh) lives in `~/.ccpm/gh` and keeps the student signed in.
 It may be missing if the folder was renamed or another tool cleaned it up; the
 sign-in may be gone if they signed out or GitHub ended it.
 
-Fix: tell the student, "Your GitHub sign-in needs a refresh. Open a new
+If `SIGNED_IN=yes` but git still says "could not read Username" or
+"Authentication failed", git isn't using the sign-in yet. Run
+`<GH> auth setup-git` (GH is the `GH=` path from the checkup; it needs no
+password), then save again.
+
+Otherwise, tell the student, "Your GitHub sign-in needs a refresh. Open a new
 session in the Claude app, paste the course setup prompt again, and follow
 it. It only redoes what's missing. Then come back to this folder and type:
 check my setup." Don't sign them in yourself, and never ask for a password or
